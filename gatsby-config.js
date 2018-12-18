@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typescript`,
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,8 +16,36 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: 'blog',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/projects`,
+        name: 'projects',
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'images',
+            },
+          },
+          'gatsby-remark-smartypants',
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -3,7 +3,15 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
+export interface SeoProps {
+  description?: string
+  lang: string
+  meta: []
+  keywords: Array<string>
+  title: string
+}
+
+function SEO({ description, lang, meta, keywords, title }: SeoProps) {
   return (
     <StaticQuery
       query={detailsQuery}
