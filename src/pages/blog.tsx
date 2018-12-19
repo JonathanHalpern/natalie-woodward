@@ -17,7 +17,10 @@ export default ({ data }) => (
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog" } } }
+    ) {
       edges {
         node {
           id

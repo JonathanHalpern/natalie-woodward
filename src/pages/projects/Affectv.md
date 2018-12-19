@@ -1,8 +1,8 @@
 ---
 templateKey: project
 path: /projects/affectv
-company: Affectv
-jobTitle: Full Stack Developer
+institution: Affectv
+title: Full Stack Developer
 startDate: 2016-03
 endDate: 2018-07
 ---

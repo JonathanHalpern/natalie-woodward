@@ -4,15 +4,19 @@ import Project from '../components/project'
 
 const Projects = () => (
   <div>
-    <h1>EMPLOYMENT TO DATE</h1>
+    <h1>EDUCATION</h1>
     <StaticQuery
       query={projectsQuery}
       render={data => {
+        {
+          console.log(data)
+        }
         return (
           <div>
-            {data.allMarkdownRemark.edges.map(edge => (
-              <Project data={edge.node} key={edge.node.id} />
-            ))}
+            {data.allMarkdownRemark &&
+              data.allMarkdownRemark.edges.map(edge => (
+                <Project data={edge.node} key={edge.node.id} />
+              ))}
           </div>
         )
       }}
@@ -26,7 +30,7 @@ const projectsQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___startDate] }
-      filter: { frontmatter: { templateKey: { eq: "project" } } }
+      filter: { frontmatter: { templateKey: { eq: "course" } } }
     ) {
       edges {
         node {
@@ -38,7 +42,6 @@ const projectsQuery = graphql`
             institution
             startDate
             endDate
-            skills
           }
         }
       }

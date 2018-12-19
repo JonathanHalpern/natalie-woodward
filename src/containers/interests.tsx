@@ -1,17 +1,17 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Project from '../components/project'
+import Interest from '../components/interest'
 
-const Projects = () => (
+const Interests = () => (
   <div>
-    <h1>EMPLOYMENT TO DATE</h1>
+    <h1>Interests and Achievements</h1>
     <StaticQuery
-      query={projectsQuery}
+      query={interestsQuery}
       render={data => {
         return (
           <div>
             {data.allMarkdownRemark.edges.map(edge => (
-              <Project data={edge.node} key={edge.node.id} />
+              <Interest data={edge.node} key={edge.node.id} />
             ))}
           </div>
         )
@@ -20,13 +20,13 @@ const Projects = () => (
   </div>
 )
 
-export default Projects
+export default Interests
 
-const projectsQuery = graphql`
+const interestsQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___startDate] }
-      filter: { frontmatter: { templateKey: { eq: "project" } } }
+      filter: { frontmatter: { templateKey: { eq: "interest" } } }
     ) {
       edges {
         node {

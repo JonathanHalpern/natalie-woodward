@@ -1,10 +1,13 @@
 ---
 templateKey: project
 path: /projects/hsbc
-company: HSBC Contractor
-jobTitle: Senior Developer
+institution: HSBC Contractor
+title: Senior Developer
 startDate: 2016-07
 endDate: 2018-01
+skills:
+  - React
+  - Javascript
 ---
 
 Built React app used to track client deals. Worked closely with back end team to instruct them on best ways to set up their APIs.

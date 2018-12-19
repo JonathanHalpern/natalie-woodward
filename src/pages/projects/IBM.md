@@ -1,8 +1,8 @@
 ---
 templateKey: project
 path: /projects/ibm
-company: IBM
-jobTitle: Full Stack Developer
+institution: IBM
+title: Full Stack Developer
 startDate: 2014-09
 endDate: 2016-02
 ---
