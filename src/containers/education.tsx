@@ -2,29 +2,22 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Project from '../components/project'
 
-const Projects = () => (
+export default () => (
   <div>
     <h1>EDUCATION</h1>
     <StaticQuery
       query={projectsQuery}
-      render={data => {
-        {
-          console.log(data)
-        }
-        return (
-          <div>
-            {data.allMarkdownRemark &&
-              data.allMarkdownRemark.edges.map(edge => (
-                <Project data={edge.node} key={edge.node.id} />
-              ))}
-          </div>
-        )
-      }}
+      render={data => (
+        <div>
+          {data.allMarkdownRemark &&
+            data.allMarkdownRemark.edges.map(edge => (
+              <Project data={edge.node} key={edge.node.id} />
+            ))}
+        </div>
+      )}
     />
   </div>
 )
-
-export default Projects
 
 const projectsQuery = graphql`
   query {

@@ -7,6 +7,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
+    '@wapps/gatsby-plugin-material-ui',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-netlify-cms`,
     {
@@ -19,29 +21,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages/blog`,
-        name: 'blog',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages/projects`,
-        name: 'projects',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages/courses`,
-        name: 'courses',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages/interests`,
-        name: 'interests',
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
     'gatsby-transformer-sharp',
