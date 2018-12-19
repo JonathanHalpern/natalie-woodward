@@ -19,3 +19,18 @@ collections:
       - label: 'Title'
         name: 'title'
         widget: 'string'
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'src/pages/projects'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - label: 'Template Key'
+        name: 'templateKey'
+        widget: 'hidden'
+        default: 'blog'
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - { label: 'Body', name: 'body', widget: 'markdown' }

@@ -2,8 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/content'
 
-// export default ({ data }) => <p>H</p>
-
 export default ({ data }) => {
   return (
     <div>
