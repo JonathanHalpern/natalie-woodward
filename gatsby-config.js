@@ -7,8 +7,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
-    '@wapps/gatsby-plugin-material-ui',
-    'gatsby-plugin-styled-components',
+    // '@wapps/gatsby-plugin-material-ui',
+    // 'gatsby-plugin-styled-components',
+    'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-netlify-cms`,
     {

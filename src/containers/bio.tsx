@@ -29,7 +29,7 @@ const projectsQuery = graphql`
         gender
       }
     }
-    placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    placeholderImage: file(relativePath: { eq: "profile3.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid

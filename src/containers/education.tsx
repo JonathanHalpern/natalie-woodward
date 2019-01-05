@@ -4,7 +4,7 @@ import Project from '../components/project'
 
 export default () => (
   <div>
-    <h1>EDUCATION</h1>
+    <h1>Education</h1>
     <StaticQuery
       query={projectsQuery}
       render={data => (
