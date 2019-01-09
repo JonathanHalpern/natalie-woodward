@@ -1,68 +1,43 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
-// import styled from 'styled-components'
+import React, { ReactNode } from 'react'
 
 import styled from '@emotion/styled'
-import { css, jsx, Global } from '@emotion/core'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
-// const buttonStyles = css`
-//   background: red !important;
-//   color: blue !important;
-// `
-
-// function EmotionButton() {
-//   return (
-//     <div>
-//       <Button>Material-UI</Button>
-//       <Button className={buttonStyles}>Emotion</Button>
-//     </div>
-//   )
-// }
+type ToolbarProps = {
+  children: ReactNode
+}
 
 export interface PassedProps {
   siteTitle: string
 }
 
-const StyledToolbar = styled(Toolbar)`
+const StyledToolbar = styled(Toolbar)<ToolbarProps>`
   display: flex;
   justify-content: space-between;
 `
 
-const StyledButton = styled(Button)`
-  background: red !important;
-  color: green !important;
-`
-
-const Buttoon = styled.div`
-  background: red !important;
-`
-
 const Header = ({ siteTitle }: PassedProps) => (
   <AppBar position="static">
-    <Toolbar>
+    <StyledToolbar>
       <div>
         <Typography variant="h6" color="inherit">
           {siteTitle}
         </Typography>
       </div>
       <div>
-        {/* <Buttoon>
-          <p>This is a hotpink button.</p>
-        </Buttoon> */}
-        <Button color="inherit" component={Link} to="/">
+        <Button color="inherit" {...{ component: Link, to: `/` } as any}>
           cv
         </Button>
-        <Button variant="contained">Default</Button>
-        <Button color="inherit" component={Link} to="/blog">
+        <Button color="inherit" {...{ component: Link, to: `/blog` } as any}>
           blog
         </Button>
       </div>
-    </Toolbar>
+    </StyledToolbar>
   </AppBar>
 )
 

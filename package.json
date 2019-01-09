@@ -1,18 +1,18 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "using-emotion",
+  "private": true,
+  "description": "Gatsby example site using using-emotion",
+  "author": "Tegan Churchill <churchill.tegan@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",
-    "emotion": "^10.0.0",
-    "emotion-server": "^10.0.0",
     "@material-ui/core": "^3.7.0",
     "@material-ui/icons": "^3.0.1",
     "@types/react-helmet": "^5.0.7",
-    "@types/styled-components": "^4.1.4",
     "@wapps/gatsby-plugin-material-ui": "^1.1.0",
+    "core-js": "^2.6.1",
+    "emotion": "^10.0.0",
+    "emotion-server": "^10.0.0",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-emotion": "^3.0.0",
@@ -36,22 +36,16 @@
     "react-moment": "^0.8.4",
     "styled-components": "^4.1.3"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "devDependencies": {
     "prettier": "^1.15.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\""
   }
 }

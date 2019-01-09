@@ -1,7 +1,7 @@
 import React from 'react'
 import Moment from 'react-moment'
 import Img from 'gatsby-image'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Content, { HTMLContent } from './content'
 
 const StyledImg = styled(Img)`
