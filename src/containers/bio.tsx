@@ -31,7 +31,7 @@ const projectsQuery = graphql`
     }
     placeholderImage: file(relativePath: { eq: "profile3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }

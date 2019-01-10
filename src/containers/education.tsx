@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Project from '../components/project'
 
 export default () => (
-  <div>
+  <div id="education">
     <h1>Education</h1>
     <StaticQuery
       query={projectsQuery}

@@ -3,8 +3,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import Interest from '../components/interest'
 
 export default () => (
-  <div>
-    <h1>Interests and Achievements</h1>
+  <div id="interests">
+    <h1>Interests</h1>
     <StaticQuery
       query={interestsQuery}
       render={data => (
