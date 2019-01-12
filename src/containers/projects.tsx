@@ -1,15 +1,20 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Project from '../components/project'
+import Project, { ProjectType } from '../components/project'
+import Title from '../components/title'
+
+type EdgeType = {
+  node: ProjectType
+}
 
 export default () => (
   <div id="projects">
-    <h1>Employment</h1>
+    <Title text="Employment" />
     <StaticQuery
       query={projectsQuery}
       render={data => (
         <div>
-          {data.allMarkdownRemark.edges.map(edge => (
+          {data.allMarkdownRemark.edges.map((edge: EdgeType) => (
             <Project data={edge.node} key={edge.node.id} />
           ))}
         </div>

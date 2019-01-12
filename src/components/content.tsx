@@ -1,13 +1,10 @@
 import React from 'react'
 
-export interface Props {
+type InputProps = {
   content: string
   className?: string
 }
 
-export default ({ content, className }: Props) => (
-  <div className={className}>{content}</div>
-)
-export const HTMLContent = ({ content, className }: Props) => (
+export default ({ content, className }: InputProps) => (
   <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
 )

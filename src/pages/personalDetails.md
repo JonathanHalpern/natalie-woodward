@@ -1,16 +1,17 @@
 ---
-templateKey: bio
+templateKey: personalDetails
 name: Jonathan Halpern
 title: BSc Maths & Physics (1st) University of Warwick
 dateOfBirth: 1988-07-07
 email: jonnyhalpern@gmail.com
-mobile: 07403300813
+mobile: '(+44) 7403300813'
 address: >
-  Flat 1, 79-85 Hackney Road
-  London
+  Flat 1, 79-85 Hackney Road,
+  London,
   E2 8FD
 nationality: British
 gender: Male
+linkedIn: https://www.linkedin.com/in/jonathan-halpern/
 ---
 
 Creative and tenacious developer, adept at rapidly creating high performing responsive apps and websites. Able to function independently, learning new skills as needed, while also a dependable team member

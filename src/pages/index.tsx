@@ -5,6 +5,7 @@ import Bio from '../containers/bio'
 import Projects from '../containers/projects'
 import Education from '../containers/education'
 import Interests from '../containers/interests'
+import Contact from '../containers/contact'
 import styled from '@emotion/styled'
 
 const mobileWidth = '700px'
@@ -19,13 +20,17 @@ const Container = styled.div`
 
 const ScrollableContainer = styled.div`
   flex: 1;
-  background: white;
   margin: 20px 0 0 0;
-  padding: 10px;
-  border-radius: 10px;
   @media (min-width: ${mobileWidth}) {
     margin: 0 0 0 30px;
   }
+`
+
+const ScrollableInnerContainer = styled.div`
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 `
 
 const FixedContainer = styled.div`
@@ -38,7 +43,7 @@ const FixedInnerContainer = styled.div`
   position: initial;
   background: white;
   width: inherit;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
   @media (min-width: ${mobileWidth}) {
     position: sticky;
@@ -58,9 +63,18 @@ const IndexPage = () => (
         </FixedInnerContainer>
       </FixedContainer>
       <ScrollableContainer>
-        <Projects />
-        <Education />
-        <Interests />
+        <ScrollableInnerContainer>
+          <Projects />
+        </ScrollableInnerContainer>
+        <ScrollableInnerContainer>
+          <Education />
+        </ScrollableInnerContainer>
+        <ScrollableInnerContainer>
+          <Interests />
+        </ScrollableInnerContainer>
+        <ScrollableInnerContainer>
+          <Contact />
+        </ScrollableInnerContainer>
       </ScrollableContainer>
     </Container>
   </Layout>

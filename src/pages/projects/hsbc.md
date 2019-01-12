@@ -8,6 +8,13 @@ endDate: 2018-01
 skills:
   - React
   - Javascript
+  - Redux
+  - D3
+  - Git
+  - Flow
+  - Material Design
+  - Styled Components
+  - Jest
 ---
 
 Built React app used to track client deals. Worked closely with back end team to instruct them on best ways to set up their APIs.

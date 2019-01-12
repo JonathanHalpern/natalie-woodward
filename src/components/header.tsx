@@ -1,5 +1,4 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React, { ReactNode } from 'react'
 
 import styled from '@emotion/styled'
@@ -12,7 +11,7 @@ type ToolbarProps = {
   children: ReactNode
 }
 
-export interface PassedProps {
+interface PassedProps {
   siteTitle: string
 }
 
@@ -40,13 +39,5 @@ const Header = ({ siteTitle }: PassedProps) => (
     </StyledToolbar>
   </AppBar>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: '',
-}
 
 export default Header

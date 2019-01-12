@@ -1,39 +1,50 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import { Global, css } from '@emotion/core'
 
 import Header from './header'
 import Background from './background'
 
+const mobileWidth = '700px'
+
 const Container = styled.div`
   margin: 20px auto;
-  max-width: 960px;
+  max-width: 480px;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
+  @media (min-width: ${mobileWidth}) {
+    max-width: 960px;
+  }
 `
 
-const OuterContainer = styled.div`
-  background: wheat;
-`
-
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={layoutQuery}
-    render={data => (
-      <Background>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Container>{children}</Container>
-      </Background>
-    )}
-  />
-)
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+type PassedProps = {
+  children: ReactNode
 }
 
-export default Layout
+export default ({ children }: PassedProps) => (
+  <div>
+    <Global
+      styles={css`
+        h1 {
+          margin: 0 0 5px 0;
+        }
+        h2 {
+          margin: 5px 0;
+        }
+      `}
+    />
+    <StaticQuery
+      query={layoutQuery}
+      render={data => (
+        <Background>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <Container>{children}</Container>
+        </Background>
+      )}
+    />
+  </div>
+)
 
 const layoutQuery = graphql`
   query {

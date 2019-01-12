@@ -1,25 +1,47 @@
 import React from 'react'
-import Moment from 'react-moment'
-import Content, { HTMLContent } from './content'
+import Content from './content'
 import Chip from '@material-ui/core/Chip'
+import DateRange from './dateRange'
+import styled from '@emotion/styled'
 
-const project = ({ data }) => {
-  console.log(data)
-  return (
-    <div>
-      <p>
-        <Moment format="MMMM YYYY">{data.frontmatter.startDate}</Moment>-
-        <Moment format="MMMM YYYY">{data.frontmatter.endDate}</Moment>
-      </p>
-      <h1>{data.frontmatter.institution}</h1>
-      <h3>{data.frontmatter.title}</h3>
-      {data.frontmatter.skills &&
-        data.frontmatter.skills.map(skill => (
-          <Chip key={skill} label={skill} />
-        ))}
-      <HTMLContent content={data.html} />
-    </div>
-  )
+type SkillChipProps = {
+  key: string
+  label: string
 }
 
-export default project
+export type ProjectType = {
+  frontmatter: {
+    title: string
+    institution: string
+    startDate: string
+    endDate: string
+    skills: Array<string>
+  }
+  html: string
+  id: string
+}
+
+type PassedProps = {
+  data: ProjectType
+}
+
+const SkillChip = styled(Chip)<SkillChipProps>`
+  margin: 5px;
+`
+
+export default ({ data }: PassedProps) => (
+  <div>
+    <h2>
+      {data.frontmatter.institution} - {data.frontmatter.title}
+    </h2>
+    <DateRange
+      startDate={data.frontmatter.startDate}
+      endDate={data.frontmatter.endDate}
+    />
+    {data.frontmatter.skills &&
+      data.frontmatter.skills.map((skill: string) => (
+        <SkillChip key={skill} label={skill} />
+      ))}
+    <Content content={data.html} />
+  </div>
+)

@@ -1,15 +1,35 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-export default ({ data }) => (
+type BlogType = {
+  frontmatter: {
+    title: string
+  }
+  excerpt: string
+  html: string
+  id: string
+}
+
+type EdgeType = {
+  node: BlogType
+}
+
+type InputProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: Array<EdgeType>
+    }
+  }
+}
+
+export default ({ data }: InputProps) => (
   <Layout>
     <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
     <h1>Blog</h1>
-    {data.allMarkdownRemark.edges.map(edge => (
+    {data.allMarkdownRemark.edges.map((edge: EdgeType) => (
       <p key={edge.node.id}>{edge.node.excerpt}</p>
     ))}
   </Layout>

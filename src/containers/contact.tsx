@@ -1,19 +1,19 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Bio from '../components/bio'
+import Contact from '../components/contact'
+import Title from '../components/title'
 
 export default () => (
-  <div>
+  <div id="contact">
+    <Title text="Contact" />
     <StaticQuery
-      query={projectsQuery}
-      render={data => (
-        <Bio data={data.markdownRemark} image={data.placeholderImage} />
-      )}
+      query={contactsQuery}
+      render={data => <Contact data={data.markdownRemark} />}
     />
   </div>
 )
 
-const projectsQuery = graphql`
+const contactsQuery = graphql`
   query {
     markdownRemark(frontmatter: { templateKey: { eq: "personalDetails" } }) {
       html
@@ -27,13 +27,7 @@ const projectsQuery = graphql`
         address
         nationality
         gender
-      }
-    }
-    placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 200) {
-          ...GatsbyImageSharpFluid
-        }
+        linkedIn
       }
     }
   }
