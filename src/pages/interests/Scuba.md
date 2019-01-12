@@ -1,6 +1,6 @@
 ---
 templateKey: interest
-startDate: '2012'
+endDate: '2012'
 ---
 
 BSAC advanced adventurer scuba diver

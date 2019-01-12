@@ -1,6 +1,13 @@
 import React from 'react'
-import Moment from 'react-moment'
+import DateRange from './dateRange'
 import Content from './content'
+import styled from '@emotion/styled'
+
+const StyledContent = styled(Content)`
+  p {
+    margin: 0;
+  }
+`
 
 export type InterestType = {
   frontmatter: {
@@ -17,11 +24,12 @@ type PassedProps = {
 
 const interest = ({ data }: PassedProps) => (
   <div>
-    <p>
-      <Moment format="YYYY">{data.frontmatter.startDate}</Moment>-
-      <Moment format="YYYY">{data.frontmatter.endDate}</Moment>
-    </p>
-    <Content content={data.html} />
+    <DateRange
+      startDate={data.frontmatter.startDate}
+      endDate={data.frontmatter.endDate}
+      dateFormat="YYYY"
+    />
+    <StyledContent content={data.html} />
   </div>
 )
 

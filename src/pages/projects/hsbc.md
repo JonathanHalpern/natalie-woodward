@@ -8,12 +8,18 @@ endDate: 2018-01
 skills:
   - React
   - Javascript
+  - HTML
+  - CSS
   - Redux
+  - Reselect
+  - Normalizr
   - D3
   - Git
+  - Jira
   - Flow
   - Material Design
   - Styled Components
+  - ESlint
   - Jest
 ---
 

@@ -1,22 +1,19 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Interest, { InterestType } from '../components/interest'
-import Title from '../components/title'
-
-type EdgeType = {
-  node: InterestType
-}
+import DividedList from '../components/dividedList'
 
 export default () => (
   <div id="interests">
-    <Title text="Interests" />
     <StaticQuery
       query={interestsQuery}
-      render={data =>
-        data.allMarkdownRemark.edges.map((edge: EdgeType) => (
-          <Interest data={edge.node} key={edge.node.id} />
-        ))
-      }
+      render={data => (
+        <DividedList
+          title="Interests"
+          edges={data.allMarkdownRemark.edges}
+          Component={Interest}
+        />
+      )}
     />
   </div>
 )
@@ -24,7 +21,7 @@ export default () => (
 const interestsQuery = graphql`
   query {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___startDate] }
+      sort: { order: DESC, fields: [frontmatter___endDate, id] }
       filter: { frontmatter: { templateKey: { eq: "interest" } } }
     ) {
       edges {

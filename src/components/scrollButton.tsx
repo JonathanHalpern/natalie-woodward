@@ -1,17 +1,34 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import Button from '@material-ui/core/Button'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-
-const StyledButton = styled(Button)``
+import { Link } from 'react-scroll'
 
 type PassedProps = {
   href: string
   text: string
 }
 
+const MyLink = props => (
+  <Link
+    activeClass="active"
+    className="test1"
+    to="{href}"
+    spy={true}
+    smooth={true}
+    duration={500}
+  />
+)
+
 export default ({ text, href }: PassedProps) => (
-  <StyledButton component={AnchorLink} offset="15" href={href}>
-    {text}
-  </StyledButton>
+  <Button key={href}>
+    <Link
+      activeClass="active"
+      to={href}
+      spy={true}
+      smooth={true}
+      duration={500}
+    >
+      {text}
+    </Link>
+  </Button>
 )

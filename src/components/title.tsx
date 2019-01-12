@@ -6,13 +6,17 @@ const Title = styled.h1`
   text-align: center;
 `
 
+const Container = styled.div`
+  margin-bottom: 15px;
+`
+
 type PassedProps = {
   text: string
 }
 
 export default ({ text }: PassedProps) => (
-  <div>
+  <Container>
     <Title>{text}</Title>
     <Divider />
-  </div>
+  </Container>
 )

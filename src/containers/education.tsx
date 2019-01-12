@@ -1,30 +1,24 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Project, { ProjectType } from '../components/project'
-import Title from '../components/title'
-
-type EdgeType = {
-  node: ProjectType
-}
+import DividedList from '../components/dividedList'
+import Project from '../components/project'
 
 export default () => (
   <div id="education">
-    <Title text="Education" />
     <StaticQuery
-      query={projectsQuery}
+      query={educationQuery}
       render={data => (
-        <div>
-          {data.allMarkdownRemark &&
-            data.allMarkdownRemark.edges.map((edge: EdgeType) => (
-              <Project data={edge.node} key={edge.node.id} />
-            ))}
-        </div>
+        <DividedList
+          title="Education"
+          edges={data.allMarkdownRemark.edges}
+          Component={Project}
+        />
       )}
     />
   </div>
 )
 
-const projectsQuery = graphql`
+const educationQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___startDate] }

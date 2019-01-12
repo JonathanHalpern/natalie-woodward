@@ -1,7 +1,7 @@
 ---
 templateKey: personalDetails
 name: Jonathan Halpern
-title: BSc Maths & Physics (1st) University of Warwick
+title: BSc Maths & Physics (1st Class) University of Warwick
 dateOfBirth: 1988-07-07
 email: jonnyhalpern@gmail.com
 mobile: '(+44) 7403300813'

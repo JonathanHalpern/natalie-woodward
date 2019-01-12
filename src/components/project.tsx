@@ -37,6 +37,7 @@ export default ({ data }: PassedProps) => (
     <DateRange
       startDate={data.frontmatter.startDate}
       endDate={data.frontmatter.endDate}
+      dateFormat="MMM YYYY"
     />
     {data.frontmatter.skills &&
       data.frontmatter.skills.map((skill: string) => (

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import Moment from 'react-moment'
 
@@ -8,14 +8,24 @@ const Container = styled.p`
 `
 
 type PassedProps = {
-  startDate: string
-  endDate: string
+  startDate?: string
+  endDate?: string
+  dateFormat?: string
 }
 
-export default ({ startDate, endDate }: PassedProps) => (
+export default ({
+  startDate,
+  endDate,
+  dateFormat = 'MMMM YYYY',
+}: PassedProps) => (
   <Container>
-    <Moment format="MMMM YYYY">{startDate}</Moment>
-    &nbsp;-&nbsp;
-    <Moment format="MMMM YYYY">{endDate}</Moment>
+    <Moment format={dateFormat}>{startDate || endDate}</Moment>
+    {!endDate && ' - present'}
+    {startDate && endDate && (
+      <span>
+        {' '}
+        - <Moment format={dateFormat}>{endDate}</Moment>
+      </span>
+    )}
   </Container>
 )

@@ -4,7 +4,7 @@ path: /projects/affectv
 institution: Affectv
 title: Full Stack Developer
 startDate: 2016-03
-endDate: 2018-07
+endDate: 2016-07
 skills:
   - Angular
   - Javascript
