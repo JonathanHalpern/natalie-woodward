@@ -14,7 +14,7 @@ export default ({
   description,
   lang = 'en',
   meta = [],
-  keywords,
+  keywords = [],
   title,
 }: Props) => {
   return (
