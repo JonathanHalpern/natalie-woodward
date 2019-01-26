@@ -1,9 +1,5 @@
-import React, { ReactNode } from 'react'
+import React, { FC } from 'react'
 import styled from '@emotion/styled'
-
-type PassedProps = {
-  children: ReactNode
-}
 
 const BackgroundTiles = styled.div`
   background-image: url('img/white-waves.png');
@@ -14,6 +10,8 @@ const BackgroundTiles = styled.div`
   background-repeat: repeat;
 `
 
-export default ({ children }: PassedProps) => (
+const Background: FC = ({ children }) => (
   <BackgroundTiles>{children}</BackgroundTiles>
 )
+
+export default Background

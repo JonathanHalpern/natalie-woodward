@@ -34,6 +34,7 @@ const educationQuery = graphql`
             institution
             startDate
             endDate
+            skills
           }
         }
       }

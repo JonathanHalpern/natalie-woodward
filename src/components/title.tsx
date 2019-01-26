@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import Divider from '@material-ui/core/Divider'
 
-const Title = styled.h1`
+const StyledH1 = styled.h1`
   text-align: center;
 `
 
@@ -10,13 +10,15 @@ const Container = styled.div`
   margin-bottom: 15px;
 `
 
-type PassedProps = {
+type Props = {
   text: string
 }
 
-export default ({ text }: PassedProps) => (
+const Title: FC<Props> = ({ text }) => (
   <Container>
-    <Title>{text}</Title>
+    <StyledH1>{text}</StyledH1>
     <Divider />
   </Container>
 )
+
+export default Title

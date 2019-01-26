@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { FC } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
@@ -18,11 +18,7 @@ const Container = styled.div`
   }
 `
 
-type PassedProps = {
-  children: ReactNode
-}
-
-export default ({ children }: PassedProps) => (
+const Project: FC = ({ children }) => (
   <div>
     <Global
       styles={css`
@@ -31,6 +27,12 @@ export default ({ children }: PassedProps) => (
         }
         h2 {
           margin: 5px 0;
+        }
+        a {
+          text-decoration: none;
+        }
+        p {
+          color: #444;
         }
       `}
     />
@@ -45,6 +47,8 @@ export default ({ children }: PassedProps) => (
     />
   </div>
 )
+
+export default Project
 
 const layoutQuery = graphql`
   query {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import Divider from '@material-ui/core/Divider'
 import Title from './title'
@@ -9,9 +9,9 @@ type EdgeType = {
   }
 }
 
-type PassedProps = {
+type Props = {
   title: string
-  edges: Array<EdgeType>
+  edges: EdgeType[]
   Component: any
 }
 
@@ -24,7 +24,7 @@ const StyledDivider = styled(Divider)<DividerProps>`
   width: 50%;
 `
 
-export default ({ title, edges, Component }: PassedProps) => (
+const DividedList: FC<Props> = ({ title, edges, Component }) => (
   <div>
     <Title text={title} />
     {edges.map((edge: EdgeType, index: number) => (
@@ -35,3 +35,4 @@ export default ({ title, edges, Component }: PassedProps) => (
     ))}
   </div>
 )
+export default DividedList

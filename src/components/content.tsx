@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-type InputProps = {
+type Props = {
   content: string
   className?: string
 }
-
-export default ({ content, className }: InputProps) => (
+const Content: FC<Props> = ({ content, className }) => (
   <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
 )
+export default Content

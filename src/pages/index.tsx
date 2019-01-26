@@ -55,7 +55,7 @@ const FixedInnerContainer = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
+    <SEO title="CV" keywords={['gatsby', 'application', 'react']} />
     <Container>
       <FixedContainer>
         <FixedInnerContainer>

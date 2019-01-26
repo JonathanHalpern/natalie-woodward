@@ -2,11 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-type PassedProps = {
+type Props = {
   description?: string
   lang?: string
   meta?: []
-  keywords: Array<string>
+  keywords: string[]
   title: string
 }
 
@@ -16,7 +16,7 @@ export default ({
   meta = [],
   keywords,
   title,
-}: PassedProps) => {
+}: Props) => {
   return (
     <StaticQuery
       query={detailsQuery}

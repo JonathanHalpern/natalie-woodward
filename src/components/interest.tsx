@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import DateRange from './dateRange'
 import Content from './content'
 import styled from '@emotion/styled'
@@ -18,11 +18,11 @@ export type InterestType = {
   id: string
 }
 
-type PassedProps = {
+type Props = {
   data: InterestType
 }
 
-const interest = ({ data }: PassedProps) => (
+const Interest: FC<Props> = ({ data }) => (
   <div>
     <DateRange
       startDate={data.frontmatter.startDate}
@@ -33,4 +33,4 @@ const interest = ({ data }: PassedProps) => (
   </div>
 )
 
-export default interest
+export default Interest

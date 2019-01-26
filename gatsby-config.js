@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Jonathan Halpern',
+    title: 'Halpern Tech Services',
     description:
       'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
     author: '@gatsbyjs',
@@ -8,8 +8,8 @@ module.exports = {
   plugins: [
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-emotion`,
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-emotion',
     '@wapps/gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-netlify-cms`,
@@ -55,5 +55,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ]
+  ],
 }

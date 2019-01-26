@@ -1,5 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Moment from 'react-moment'
+import styled from '@emotion/styled'
+
+import IconLink from './iconLink'
+
+const StyledIconLink = styled(IconLink)`
+  display: block;
+  margin-bottom: 5px;
+`
 
 export type ContactProps = {
   frontmatter: {
@@ -11,28 +19,31 @@ export type ContactProps = {
   }
 }
 
-type PassedProps = {
+type Props = {
   data: ContactProps
 }
 
-export default ({ data }: PassedProps) => (
+const Contact: FC<Props> = ({ data }) => (
   <div>
-    <p>
-      Date of Birth:{' '}
-      <Moment format="DD/MM/YYYY">{data.frontmatter.dateOfBirth}</Moment>
-    </p>
-    <p>
-      Email:{' '}
-      <a href={`mailto:${data.frontmatter.email}`} target="blank">
-        {data.frontmatter.email}
-      </a>
-    </p>
-    <p>Mobile: {data.frontmatter.mobile}</p>
-    <p>Address: {data.frontmatter.address}</p>
-    <p>
-      <a href={data.frontmatter.linkedIn} target="blank">
-        Linked In
-      </a>
-    </p>
+    <StyledIconLink
+      component={
+        <Moment format="DD/MM/YYYY">{data.frontmatter.dateOfBirth}</Moment>
+      }
+      iconName="birthday-cake"
+    />
+    <StyledIconLink
+      href={data.frontmatter.email}
+      iconName="envelope"
+      text={data.frontmatter.email}
+    />
+    <StyledIconLink iconName="phone" text={data.frontmatter.mobile} />
+    <StyledIconLink iconName="home" text={data.frontmatter.address} />
+    <StyledIconLink
+      href={data.frontmatter.linkedIn}
+      iconName="linkedin"
+      text={data.frontmatter.linkedIn}
+    />
   </div>
 )
+
+export default Contact

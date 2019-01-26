@@ -34,7 +34,6 @@ const interestsQuery = graphql`
             institution
             startDate
             endDate
-            skills
           }
         }
       }

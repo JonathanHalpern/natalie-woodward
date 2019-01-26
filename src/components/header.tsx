@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, FC } from 'react'
 
 import styled from '@emotion/styled'
 import AppBar from '@material-ui/core/AppBar'
@@ -11,7 +11,7 @@ type ToolbarProps = {
   children: ReactNode
 }
 
-interface PassedProps {
+interface Props {
   siteTitle: string
 }
 
@@ -20,7 +20,7 @@ const StyledToolbar = styled(Toolbar)<ToolbarProps>`
   justify-content: space-between;
 `
 
-const Header = ({ siteTitle }: PassedProps) => (
+const Header: FC<Props> = ({ siteTitle }) => (
   <AppBar position="static">
     <StyledToolbar>
       <div>
@@ -28,14 +28,14 @@ const Header = ({ siteTitle }: PassedProps) => (
           {siteTitle}
         </Typography>
       </div>
-      <div>
+      {/* <div>
         <Button color="inherit" {...{ component: Link, to: `/` } as any}>
           cv
         </Button>
         <Button color="inherit" {...{ component: Link, to: `/blog` } as any}>
           blog
         </Button>
-      </div>
+      </div> */}
     </StyledToolbar>
   </AppBar>
 )

@@ -1,6 +1,5 @@
-import React from 'react'
-import Img from 'gatsby-image'
-import { GatsbyImageProps } from 'gatsby-image'
+import React, { FC } from 'react'
+import Img, { GatsbyImageProps } from 'gatsby-image'
 import styled from '@emotion/styled'
 import Divider from '@material-ui/core/Divider'
 import Content from './content'
@@ -10,7 +9,7 @@ import Navigation from '../containers/navigation'
 const StyledImg = styled(Img)`
   width: 200px;
   border-radius: 50%;
-  margin: 10px auto;
+  margin: 0px auto 15px;
 `
 
 export type Bio = {
@@ -21,14 +20,13 @@ export type Bio = {
   html: string
 }
 
-type PassedProps = {
+type Props = {
   data: Bio
   image: {
     childImageSharp: GatsbyImageProps
   }
 }
-
-export default ({ data, image }: PassedProps) => (
+const Bio: FC<Props> = ({ data, image }) => (
   <div>
     <Title text={data.frontmatter.name} />
     <StyledImg fluid={image.childImageSharp.fluid} />
@@ -39,3 +37,5 @@ export default ({ data, image }: PassedProps) => (
     <Navigation />
   </div>
 )
+
+export default Bio

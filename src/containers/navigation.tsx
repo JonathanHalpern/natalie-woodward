@@ -27,7 +27,7 @@ const nav = [
 export default () => (
   <Container>
     {nav.map(item => (
-      <ScrollButton href={item.href} text={item.text} />
+      <ScrollButton href={item.href} text={item.text} key={item.href} />
     ))}
   </Container>
 )

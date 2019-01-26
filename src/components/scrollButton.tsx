@@ -1,26 +1,14 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React, { FC } from 'react'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-scroll'
 
-type PassedProps = {
+type Props = {
   href: string
   text: string
 }
 
-const MyLink = props => (
-  <Link
-    activeClass="active"
-    className="test1"
-    to="{href}"
-    spy={true}
-    smooth={true}
-    duration={500}
-  />
-)
-
-export default ({ text, href }: PassedProps) => (
-  <Button key={href}>
+const ScrollButton: FC<Props> = ({ text, href }) => (
+  <Button key={href} color="primary">
     <Link
       activeClass="active"
       to={href}
@@ -32,3 +20,5 @@ export default ({ text, href }: PassedProps) => (
     </Link>
   </Button>
 )
+
+export default ScrollButton

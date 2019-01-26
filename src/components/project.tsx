@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Content from './content'
 import Chip from '@material-ui/core/Chip'
 import DateRange from './dateRange'
@@ -15,13 +15,13 @@ export type ProjectType = {
     institution: string
     startDate: string
     endDate: string
-    skills: Array<string>
+    skills: string[]
   }
   html: string
   id: string
 }
 
-type PassedProps = {
+type Props = {
   data: ProjectType
 }
 
@@ -29,7 +29,7 @@ const SkillChip = styled(Chip)<SkillChipProps>`
   margin: 5px;
 `
 
-export default ({ data }: PassedProps) => (
+const Project: FC<Props> = ({ data }) => (
   <div>
     <h2>
       {data.frontmatter.institution} - {data.frontmatter.title}
@@ -41,8 +41,10 @@ export default ({ data }: PassedProps) => (
     />
     {data.frontmatter.skills &&
       data.frontmatter.skills.map((skill: string) => (
-        <SkillChip key={skill} label={skill} />
+        <SkillChip key={skill} label={skill} color="primary" />
       ))}
     <Content content={data.html} />
   </div>
 )
+
+export default Project
