@@ -1,6 +1,6 @@
 ---
 templateKey: personalDetails
-name: Jonathan Halpern
+name: Natalie Woodward
 title: BSc Maths & Physics (1st Class Hons) University of Warwick
 dateOfBirth: 1988-07-07
 email: jonnyhalpern@gmail.com

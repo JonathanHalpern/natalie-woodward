@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Halpern Tech Services',
-    description: 'The personal statement for Jonathan Halpern',
+    title: 'Dr Natalie Woodward',
+    description: 'The personal statement for Natalie Woodward',
     author: 'Jonathan Halpern',
   },
   plugins: [
@@ -15,7 +15,7 @@ module.exports = {
         theme: {
           palette: {
             primary: {
-              main: '#3f51b5',
+              main: '#faa300',
             },
           },
         },
