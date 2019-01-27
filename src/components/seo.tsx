@@ -6,7 +6,7 @@ type Props = {
   description?: string
   lang?: string
   meta?: []
-  keywords: string[]
+  keywords?: string[]
   title: string
 }
 

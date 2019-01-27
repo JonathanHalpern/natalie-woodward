@@ -32,7 +32,7 @@ const Contact: FC<Props> = ({ data }) => (
       iconName="birthday-cake"
     />
     <StyledIconLink
-      href={data.frontmatter.email}
+      href={`mailto:${data.frontmatter.email}`}
       iconName="envelope"
       text={data.frontmatter.email}
     />

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Interest, { InterestType } from '../components/interest'
+import Interest from '../components/interest'
 import DividedList from '../components/dividedList'
 
 export default () => (
