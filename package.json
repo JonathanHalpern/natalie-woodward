@@ -1,8 +1,8 @@
 {
-  "name": "using-emotion",
+  "name": "halpern-tech-services",
   "private": true,
-  "description": "Gatsby example site using using-emotion",
-  "author": "Tegan Churchill <churchill.tegan@gmail.com>",
+  "description": "The personal statement for Jonathan Halpern",
+  "author": "Jonathan Halpern",
   "dependencies": {
     "@emotion/core": "^10.0.0",
     "@emotion/styled": "^10.0.0",

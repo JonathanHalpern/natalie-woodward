@@ -1,6 +1,7 @@
 ---
 templateKey: interest
 endDate: '2012'
+title: 'Scuba'
 ---
 
-BSAC advanced adventurer scuba diver
+SSI advanced adventurer scuba diver

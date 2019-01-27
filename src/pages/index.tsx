@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../containers/layout'
 import SEO from '../components/seo'
 import Bio from '../containers/bio'
 import Projects from '../containers/projects'

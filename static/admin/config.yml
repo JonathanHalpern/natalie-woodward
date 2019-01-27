@@ -22,6 +22,8 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'projects'
     label: 'Projects'
+    editor:
+      preview: false
     folder: 'src/pages/projects'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
@@ -33,4 +35,70 @@ collections:
       - label: 'Title'
         name: 'title'
         widget: 'string'
+      - label: 'Employer'
+        name: 'institution'
+        widget: 'string'
+      - label: 'Start Date'
+        name: 'startDate'
+        widget: 'datetime'
+      - label: 'End Date'
+        name: 'endDate'
+        widget: 'datetime'
+      - label: 'Skills'
+        name: 'skills'
+        widget: 'list'
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'education'
+    label: 'Courses'
+    editor:
+      preview: false
+    folder: 'src/pages/courses'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - label: 'Template Key'
+        name: 'templateKey'
+        widget: 'hidden'
+        default: 'course'
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Institution'
+        name: 'institution'
+        widget: 'string'
+      - label: 'Start Date'
+        name: 'startDate'
+        widget: 'datetime'
+      - label: 'End Date'
+        name: 'endDate'
+        widget: 'datetime'
+      - label: 'Skills'
+        name: 'skills'
+        widget: 'list'
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'interests'
+    label: 'Interests'
+    editor:
+      preview: false
+    folder: 'src/pages/interests'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - label: 'Template Key'
+        name: 'templateKey'
+        widget: 'hidden'
+        default: 'interest'
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Start Date (if you only did this once, leave blank and add end date)'
+        name: 'startDate'
+        widget: 'datetime'
+        required: false
+        default: undefined
+      - label: 'End Date (leave blank if ongoing)'
+        name: 'endDate'
+        widget: 'datetime'
+        required: false
+        default: undefined
       - { label: 'Body', name: 'body', widget: 'markdown' }

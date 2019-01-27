@@ -1,16 +1,13 @@
 import React, { FC, ReactNode } from 'react'
 import styled from '@emotion/styled'
+import { withTheme } from '@material-ui/core/styles'
 import FontAwesome from 'react-fontawesome'
 
 const Link = styled.a`
-  color: #3f51b5;
+  color: ${props => props.color};
   :visited {
-    color: #3f51b5;
+    color: default;
   }
-`
-
-const Icon = styled(FontAwesome)`
-  color: #3f51b5;
 `
 
 type Props = {
@@ -19,6 +16,7 @@ type Props = {
   text?: string
   className?: string
   component?: ReactNode
+  theme: any
 }
 
 const IconLink: FC<Props> = ({
@@ -27,11 +25,17 @@ const IconLink: FC<Props> = ({
   text,
   className,
   component,
+  theme,
 }) => (
-  <Link href={href} className={className ? className : ''}>
-    <Icon name={iconName} fixedWidth />: <span>{text}</span>
+  <Link
+    href={href}
+    className={className ? className : ''}
+    target="_blank"
+    color={theme.palette.primary.main}
+  >
+    <FontAwesome name={iconName} fixedWidth />: <span>{text}</span>
     {component}
   </Link>
 )
 
-export default IconLink
+export default withTheme()(IconLink)

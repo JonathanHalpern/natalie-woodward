@@ -3,8 +3,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { Global, css } from '@emotion/core'
 
-import Header from './header'
-import Background from './background'
+import Header from '../components/header'
+import Background from '../components/background'
 
 const mobileWidth = '700px'
 
@@ -18,7 +18,7 @@ const Container = styled.div`
   }
 `
 
-const Project: FC = ({ children }) => (
+const Layout: FC = ({ children }) => (
   <div>
     <Global
       styles={css`
@@ -48,7 +48,7 @@ const Project: FC = ({ children }) => (
   </div>
 )
 
-export default Project
+export default Layout
 
 const layoutQuery = graphql`
   query {
